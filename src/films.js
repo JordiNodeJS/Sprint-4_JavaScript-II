@@ -1,4 +1,4 @@
-
+// import movies from './data.js';
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(movies) {
   let result = 0;
