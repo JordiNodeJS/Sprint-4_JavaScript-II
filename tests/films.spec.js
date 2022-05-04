@@ -12,19 +12,19 @@ const {
 
 // Exercise 1
 describe('Function "getAllDirectors"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof getAllDirectors).toBe('function');
   });
 
-  it('should return an array', () => {
+  it.only('should return an array', () => {
     expect(getAllDirectors(movies) instanceof Array).toBe(true);
   });
 
-  it('should return a new array, not update the original one', () => {
+  it.only('should return a new array, not update the original one', () => {
     expect(getAllDirectors(movies)).not.toEqual(movies);
   });
 
-  it('should return a new array with the same length as the original one', () => {
+  it.only('should return a new array with the same length as the original one', () => {
     const testArr = [
       {
         title: 'Paths of Glory',
@@ -52,19 +52,19 @@ describe('Function "getAllDirectors"', () => {
 
 // Exercise 2
 describe('Function "getMoviesFromDirector"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof getMoviesFromDirector).toBe('function');
   });
 
-  it('should return an array', () => {
+  it.only('should return an array', () => {
     expect(getMoviesFromDirector(movies) instanceof Array).toBe(true);
   });
 
-  it('should return a new array, not update the original one', () => {
+  it.only('should return a new array, not update the original one', () => {
     expect(getMoviesFromDirector(movies)).not.toEqual(movies);
   });
 
-  it('should return a new array with the movies from director', () => {
+  it.only('should return a new array with the movies from director', () => {
     const testArr = [
       {
         title: 'Paths of Glory',
@@ -99,15 +99,15 @@ describe('Function "getMoviesFromDirector"', () => {
 
 // Exercise 3
 describe('Function "moviesAverageOfDirector"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof moviesAverageOfDirector).toBe('function');
   });
 
-  it('should return a number', () => {
+  it.only('should return a number', () => {
     expect(typeof moviesAverageOfDirector(movies, 'Stanley Kubrick')).toBe('number');
   });
 
-  it(' should return the average score of movies selecting only the director films. With 2 decimals! ', () => {
+  it.only(' should return the average score of movies selecting only the director films. With 2 decimals! ', () => {
     expect(moviesAverageOfDirector([
       {
         title: 'Paths of Glory',
@@ -140,30 +140,30 @@ describe('Function "moviesAverageOfDirector"', () => {
 
 // Exercise 4
 describe('Function "orderAlphabetically"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof orderAlphabetically).toBe('function');
   });
 
-  it('should return an array', () => {
+  it.only('should return an array', () => {
     expect(typeof orderAlphabetically([])).toBe('object');
   });
 
-  it('should not mutate the original array', () => {
+  it.only('should not mutate the original array', () => {
     const arr = [{ title: 'xyz' }, { title: 'abc' }];
     orderAlphabetically(arr);
     expect(arr[0].title).toEqual('xyz');
   });
 
-  it('should only return the title of the movies, each value should be a string', () => {
+  it.only('should only return the title of the movies, each value should be a string', () => {
     expect(typeof orderAlphabetically([{ title: 'aab' }])[0]).toBe('string');
   });
 
-  it('should return all of items when the array passed has fewer than 20 items', () => {
+  it.only('should return all of items when the array passed has fewer than 20 items', () => {
     const moviesArr = [{ title: 'aab' }, { title: 'bab' }, { title: 'acb' }];
     expect(orderAlphabetically(moviesArr)).toHaveLength(3);
   });
 
-  it('should order them alphabetically.', () => {
+  it.only('should order them alphabetically.', () => {
     const moviesArr = [
       { title: 'aab' },
       { title: 'aaa' },
@@ -181,7 +181,7 @@ describe('Function "orderAlphabetically"', () => {
     ]);
   });
 
-  it('should return the top 20 after ordering them alphabetically.', () => {
+  it.only('should return the top 20 after ordering them alphabetically.', () => {
     const moviesArr = [
       { title: 'aab' },
       { title: 'bab' },
@@ -248,30 +248,30 @@ describe('Function "orderAlphabetically"', () => {
 
 // Exercise 5
 describe('Function "orderByYear"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof orderByYear).toBe('function');
   });
 
-  it('should return an array', () => {
+  it.only('should return an array', () => {
     expect(typeof orderByYear(movies)).toBe('object');
   });
 
-  it('should return a new array', () => {
+  it.only('should return a new array', () => {
     const arr = [];
     expect(orderByYear(arr)).not.toBe(arr);
   });
 
-  it('should return the element in a single element array', () => {
+  it.only('should return the element in a single element array', () => {
     expect(orderByYear([{ year: 1982 }])).toEqual([{ year: 1982 }]);
   });
 
-  it('should return the new array in ascending order', () => {
+  it.only('should return the new array in ascending order', () => {
     expect(
       orderByYear([{ year: 2002 }, { year: 1982 }, { year: 1995 }])
     ).toEqual([{ year: 1982 }, { year: 1995 }, { year: 2002 }]);
   });
 
-  it('should order movies with the same year by their title, alphabetically', () => {
+  it.only('should order movies with the same year by their title, alphabetically', () => {
     expect(
       orderByYear([
         { title: 'abc', year: 2002 },
@@ -288,65 +288,65 @@ describe('Function "orderByYear"', () => {
 
 // Exercise 6
 describe('Function "moviesAverageByCategory"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof moviesAverageByCategory).toBe('function');
   });
 
-  it('should return a number', () => {
+  it.only('should return a number', () => {
     expect(typeof moviesAverageByCategory(movies, 'Drama')).toBe('number');
   });
 
-  it(' should return the average score of 2 movies with score 7 each', () => {
+  it.only(' should return the average score of 2 movies with score 7 each', () => {
     expect(moviesAverageByCategory([
       { score: 7,
-        genre: ['Drama'], 
+        genre: ['Drama'],
       },
       { score: 7,
-        genre: ['Drama'], 
+        genre: ['Drama'],
       }
     ],
     'Drama')).toBe(7);
   });
 
-  it('should be rounded to 2 decimals places', () => {
+  it.only('should be rounded to 2 decimals places', () => {
     expect(moviesAverageByCategory([
       { score: 7,
-        genre: ['Drama'], 
+        genre: ['Drama'],
       },
       { score: 6,
-        genre: ['Drama'], 
+        genre: ['Drama'],
       }
     ],
     'Drama')).toBe(6.50);
   });
 
-  it('should not take into consideration films of other category', () => {
+  it.only('should not take into consideration films of other category', () => {
     expect(moviesAverageByCategory([
       { score: 5,
-        genre: ['Drama'], 
+        genre: ['Drama'],
       },
       { score: 10,
-        genre: ['Action'], 
+        genre: ['Action'],
       },
       { score: 10,
-        genre: ['Action'], 
+        genre: ['Action'],
       }
     ],
     'Action')).toBe(10);
   });
 
-  /* Bug fixing, to review 
-  it('should return average even if one of the movies does not have score', () => {
+  /* Bug fixing, to review
+  it.only('should return average even if one of the movies does not have score', () => {
     expect(moviesAverageByCategory([{ score: 6 }, { score: '' }, {}])).toBe(2);
   });
   */
-  it('should return average even if one of the movies does not have score', () => {
+  it.only('should return average even if one of the movies does not have score', () => {
     expect(moviesAverageByCategory([
       { score: 5,
-        genre: ['Action'], 
+        genre: ['Action'],
       },
       { score: '',
-        genre: ['Action'], 
+        genre: ['Action'],
       }
     ],
     'Action')).toBe(5);
@@ -356,33 +356,33 @@ describe('Function "moviesAverageByCategory"', () => {
 
 // Exercise 7
 describe('Function "hoursToMinutes"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof hoursToMinutes).toBe('function');
   });
 
-  it('should return an array', () => {
+  it.only('should return an array', () => {
     expect(hoursToMinutes(movies) instanceof Array).toBe(true);
   });
 
-  it('should return a new array, not update the original one', () => {
+  it.only('should return a new array, not update the original one', () => {
     expect(hoursToMinutes(movies)).not.toEqual(movies);
   });
 
-  it('should return an array of movies with duration as a number', () => {
+  it.only('should return an array of movies with duration as a number', () => {
     expect(typeof hoursToMinutes(movies)[0].duration).toBe('number');
   });
 
-  it('should return an array of movies with the correct duration for a 31 minute movie', () => {
+  it.only('should return an array of movies with the correct duration for a 31 minute movie', () => {
     const movieTry = [{ duration: '0h 31min' }];
     expect(hoursToMinutes(movieTry)[0].duration).toBe(31);
   });
 
-  it('should return an array of movies with the correct duration for a 341 minute movie', () => {
+  it.only('should return an array of movies with the correct duration for a 341 minute movie', () => {
     const movieTry = [{ duration: '5h 41min' }];
     expect(hoursToMinutes(movieTry)[0].duration).toBe(341);
   });
 
-  it('should return an array of movies with the correct duration for a 2 hour movie', () => {
+  it.only('should return an array of movies with the correct duration for a 2 hour movie', () => {
     const movieTry = [{ duration: '2h' }];
     expect(hoursToMinutes(movieTry)[0].duration).toBe(120);
   });
@@ -390,19 +390,19 @@ describe('Function "hoursToMinutes"', () => {
 
 // Exercise 8
 describe('Function "bestFilmOfYear"', () => {
-  it('should be declared', () => {
+  it.only('should be declared', () => {
     expect(typeof bestFilmOfYear).toBe('function');
   });
 
-  it('should return an array', () => {
+  it.only('should return an array', () => {
     expect(bestFilmOfYear(movies, 1999) instanceof Array).toBe(true);
   });
 
-  it('should return a new array, not update the original one', () => {
+  it.only('should return a new array, not update the original one', () => {
     expect(bestFilmOfYear(movies, 1999)).not.toEqual(movies);
   });
 
-  it('should return the best film of a year, searching in an array', () => {
+  it.only('should return the best film of a year, searching in an array', () => {
     const testArr = [
       {
         title: 'Film1',
