@@ -29,12 +29,16 @@ function moviesAverageOfDirector(movies, director) {
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(movies) {
   const titleMovies = movies.map( movie => movie.title)
-
   return titleMovies.sort().filter((movie,i)=> i < 20)
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {}
+function orderByYear(movies) {
+  const newmovies = [...movies]
+  return newmovies
+    .sort((a, b) => { if (a.title < b.title) return -1})
+    .sort((a, b)=> a.year - b.year)
+}
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory() {}
