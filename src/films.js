@@ -60,12 +60,11 @@ function moviesAverageByCategory(movies, category) {
 
 
 // Exercise 7: Modify the duration of movies to minutes
+// https://www.codingem.com/javascript-clone-object/
+// structuredClone() no funciona con el test pues no está implementado en node de momento
+
 function hoursToMinutes(movies) {
   let moviesDurationInMinutes = JSON.parse(JSON.stringify(movies))
-
-
-  // moviesDurationInMinutes.push(structuredClone(movies))
-
 
   moviesDurationInMinutes.forEach((e) => {
 
@@ -100,7 +99,9 @@ function hoursToMinutes(movies) {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(movies) {
+
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
