@@ -1,5 +1,9 @@
 # Sprint 4 IT Academy | Video management tool
 
+# Práctica finalizada
+## Captura de pantalla del test
+[Test finalizado](/Sprint-4_JavaScript-II.png)
+
 ## Introduction
 
 A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
@@ -82,5 +86,3 @@ an array of information about 250 movies.
 - You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
 
 - Don't forget to include the capture of the test results in the virtual campus.
-
-

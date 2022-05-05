@@ -64,7 +64,8 @@ function moviesAverageByCategory(movies, category) {
 // structuredClone() no funciona con el test pues no está implementado en node de momento
 
 function hoursToMinutes(movies) {
-  let moviesDurationInMinutes = JSON.parse(JSON.stringify(movies))
+  // let moviesDurationInMinutes = JSON.parse(JSON.stringify(movies))
+  let moviesDurationInMinutes = movies.map((movie) => {return {...movie}})
 
   moviesDurationInMinutes.forEach((e) => {
 
@@ -91,17 +92,17 @@ function hoursToMinutes(movies) {
     e.duration = mins
 
 
-    // if ( e.duration.search('h') !== -1 || e.duration.search('min') !== -1 )
-    // mins =  hoursToMins + getMins
-
   });
   return moviesDurationInMinutes
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear(movies) {
-
+function bestFilmOfYear(movies, year) {
+  const moviesYear = movies.filter( movie => movie.year == year)
+  moviesYear.sort((a, b) => b.score - a.score)
+  return moviesYear.slice(0,1)
 }
+
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
