@@ -60,7 +60,44 @@ function moviesAverageByCategory(movies, category) {
 
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {}
+function hoursToMinutes(movies) {
+  let moviesDurationInMinutes = JSON.parse(JSON.stringify(movies))
+
+
+  // moviesDurationInMinutes.push(structuredClone(movies))
+
+
+  moviesDurationInMinutes.forEach((e) => {
+
+    let indexOfHour, getHours, getMins, indexOfMin
+    let mins = 0
+    // getting the minutes
+
+    if (e.duration.search('min') !== -1) {
+      indexOfMin = e.duration.search('min');
+      getMins = +e.duration.substr(indexOfMin - 2, 2);
+      // console.log(getMins)
+      mins +=getMins
+
+    }
+    // getting the hour
+
+		if (e.duration.search('h') !== -1){
+      indexOfHour = e.duration.search('h');
+    	getHours = +e.duration.charAt(indexOfHour - 1);
+      // console.log(getHours)
+      mins += getHours*60
+    }
+
+    e.duration = mins
+
+
+    // if ( e.duration.search('h') !== -1 || e.duration.search('min') !== -1 )
+    // mins =  hoursToMins + getMins
+
+  });
+  return moviesDurationInMinutes
+}
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {}
