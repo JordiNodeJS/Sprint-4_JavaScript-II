@@ -65,7 +65,7 @@ function moviesAverageByCategory(movies, category) {
 
 function hoursToMinutes(movies) {
   // let moviesDurationInMinutes = JSON.parse(JSON.stringify(movies))
-  let moviesDurationInMinutes = movies.map((movie) => {return {...movie}})
+  let moviesDurationInMinutes = movies.map((movie) =>  ({...movie}) )
 
   moviesDurationInMinutes.forEach((e) => {
 
